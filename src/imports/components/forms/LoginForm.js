@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
-import {Form, FormGroup, Button, Label} from 'reactstrap';
-import { Input, Icon } from 'antd';
+import {Form, FormGroup, Button, Label, Input} from 'reactstrap';
 
 class LoginForm extends Component {
     constructor(props) {
@@ -8,7 +7,6 @@ class LoginForm extends Component {
         this.state = {
             NotHaveMember: this.props.HaveMember,
             RememberMe: this.props.RememberMe,
-            issShowPassword: false,
         }
     }
 
@@ -31,7 +29,7 @@ class LoginForm extends Component {
 
         if (this.state.RememberMe) {
             return (
-                <FormGroup check className="pl-0">
+                <FormGroup check>
                     <Label check>
                         <Input type="checkbox" />{' ' + rememberMe}
                     </Label>
@@ -40,16 +38,10 @@ class LoginForm extends Component {
         }
     }
 
-    handlePressIcon = (event) => {
-        event.preventDefault();
-        this.setState({issShowPassword: !this.state.issShowPassword});
-    };
-
     render() {
         const { handleChange, handleSubmit, username, password } = this.props;
         const { header, forgot, forgotClick, submit } = this.props.staticText;
         const { issShowPassword } = this.state;
-        const { handlePressIcon } = this;
 
         return (
             <Form>
@@ -65,8 +57,6 @@ class LoginForm extends Component {
                            size="large"
                            placeholder="password" name="password"
                            className="rounded-0"
-                           addonAfter={<Icon onClick={handlePressIcon} type="eye"
-                                             style={issShowPassword ? {color: 'rgba(0,0,0,1)', transition: 'all 0.5s'}:{color: 'rgba(0,0,0,0.4)', transition: 'all 0.5s'}} />}
                            value={password}
                            onChange={handleChange}/>
                 </FormGroup>

@@ -38,7 +38,7 @@ class NoMatch extends Component{
                             <h1 className="display-1"><i className="far fa-frown"></i></h1>
                             <h1 className="display-4 p-0 m-0">{staticText.WeCant}</h1>
                             <p className="lead text-muted">{staticText.Sorry}</p>
-                            <Button outline color="dark">Home page</Button>
+                            <Button outline color="dark" tag="a" href="/">Home page</Button>
                         </Col>
                     </Row>
                 </Container>
