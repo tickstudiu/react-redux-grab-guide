@@ -30,38 +30,47 @@ class NavbarDashBoard extends Component {
     render() {
         const {toggle} = this;
         const {isOpen} = this.state;
+        const {msg, tour, activity, setting, signOut} = this.props.staticText;
+        const {lang, handleChangeLanguage} = this.props;
+
         return (
             <Navbar color="primary" light expand="md">
                 <NavbarBrand href="/" className="text-white text-uppercase">garb-guide</NavbarBrand>
                 <NavbarToggler onClick={toggle}/>
                 <Collapse isOpen={isOpen} navbar>
                     <Nav className="ml-auto" navbar>
+
                         <NavItem>
-                            <NavLink href="#" className="text-white">TH</NavLink>
+                            <NavLink href="#"
+                                     className={`nav-link ${(lang === 'en') ? 'disabled' : 'text-white'}`}
+                                     onClick={handleChangeLanguage.bind(this, 'en')}>ENG</NavLink>
                         </NavItem>
                         <NavItem>
-                            <NavLink href="#" className="text-white">ENG</NavLink>
+                            <NavLink href="#"
+                                     className={`nav-link ${(lang === 'th') ? 'disabled' : 'text-white'}`}
+                                     onClick={handleChangeLanguage.bind(this, 'th')}>TH</NavLink>
                         </NavItem>
+
                         <UncontrolledDropdown nav inNavbar>
                             <DropdownToggle nav className="text-white">
                                 <i className="fas fa-bars"></i>
                             </DropdownToggle>
                             <DropdownMenu right>
                                 <DropdownItem>
-                                    Messenger
+                                    {msg}
                                 </DropdownItem>
                                 <DropdownItem>
-                                    Tour
+                                    {tour}
                                 </DropdownItem>
                                 <DropdownItem>
-                                    Activity
+                                    {activity}
                                 </DropdownItem>
                                 <DropdownItem divider/>
                                 <DropdownItem>
-                                    Setting
+                                    {setting}
                                 </DropdownItem>
                                 <DropdownItem>
-                                    Sign out
+                                    {signOut}
                                 </DropdownItem>
                             </DropdownMenu>
                         </UncontrolledDropdown>

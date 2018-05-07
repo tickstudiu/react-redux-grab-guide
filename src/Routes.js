@@ -8,23 +8,25 @@ class Routes extends Component {
     return (
       <Router>
         <Switch>
-          {indexRoutes.map(route => {if (route.path === null){
-              return<Route
-                      exact
-                      key={route.name}
-                      component={route.component}
-                  />
-              }else{
-                return<Route
-                        exact
-                        path={route.path}
-                        key={route.name}
-                        component={route.component}
-                    />
-              }
-              }
-            )
-          }
+            {
+                indexRoutes.map(route => {
+                    if (route.path === null){
+                        return<Route
+                            exact
+                            key={route.name}
+                            component={route.component}
+                        />
+                    }
+                    else{
+                        return<Route
+                            exact
+                            path={route.path}
+                            key={route.name}
+                            component={route.component}
+                        />
+                    }
+                })
+            }
         </Switch>
       </Router>
     );

@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {Form, Col, FormGroup, Input, Button, Label} from 'reactstrap';
 import { Icon } from 'antd';
 
-class CustomerForm extends Component {
+class ProfileForm extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -11,40 +11,42 @@ class CustomerForm extends Component {
     }
 
     render() {
+        const { customerId,address,tel,contact,date,route,type } = this.props.staticText;
+
         return (
             <Form>
                 <FormGroup row>
-                    <Label for="exampleEmail" sm={2}>Customer ID</Label>
+                    <Label for="exampleEmail" sm={2}>{customerId}</Label>
                     <Col sm={10}>
                         <Input type="text" name="name" placeholder="Name"/>
                     </Col>
                 </FormGroup>
                 <FormGroup row>
-                    <Label for="exampleText" sm={2}>Address</Label>
+                    <Label for="exampleText" sm={2}>{address}</Label>
                     <Col sm={10}>
                         <Input type="textarea" name="text" id="exampleText"/>
                     </Col>
                 </FormGroup>
                 <FormGroup row>
-                    <Label for="examplePhone" sm={2}>Telephone</Label>
+                    <Label for="examplePhone" sm={2}>{tel}</Label>
                     <Col sm={10}>
                         <Input type="text" name="phone" placeholder="Phone"/>
                     </Col>
                 </FormGroup>
                 <FormGroup row>
-                    <Label for="exampleContact" sm={2}>Contact</Label>
+                    <Label for="exampleContact" sm={2}>{contact}</Label>
                     <Col sm={10}>
                         <Input type="text" name="contact" placeholder="Contact person"/>
                     </Col>
                 </FormGroup>
                 <FormGroup row>
-                    <Label for="exampleDate" sm={2}>Date</Label>
+                    <Label for="exampleDate" sm={2}>{date}</Label>
                     <Col sm={10}>
                         <Input type="date" name="date" id="exampleDate" placeholder="date placeholder"/>
                     </Col>
                 </FormGroup>
                 <FormGroup row>
-                    <Label for="exampleSelect" sm={2}>Route</Label>
+                    <Label for="exampleSelect" sm={2}>{route}</Label>
                     <Col sm={10}>
                         <Input type="select" name="select" id="exampleSelect">
                             <option>1</option>
@@ -56,7 +58,7 @@ class CustomerForm extends Component {
                     </Col>
                 </FormGroup>
                 <FormGroup row>
-                    <Label for="exampleSelect" sm={2}>Type</Label>
+                    <Label for="exampleSelect" sm={2}>{type}</Label>
                     <Col sm={10}>
                         <Input type="select" name="select" id="exampleSelect">
                             <option>A</option>
@@ -71,4 +73,4 @@ class CustomerForm extends Component {
     }
 }
 
-export default CustomerForm;
+export default ProfileForm;

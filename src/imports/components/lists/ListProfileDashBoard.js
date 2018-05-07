@@ -13,16 +13,16 @@ class ListProfileDashBoard extends Component {
     render() {
 
         const { name, image } = this.state;
-
+        const { welcome } = this.props.staticText;
         return(
             <ListGroup>
-                <ListGroupItem className="border-0 d-flex">
+                <ListGroupItem className="border-0 d-flex rounded-0 mt-3">
                     <img
                         src={image}
                         style={{height: "50px", width: "50px"}}
                         className="rounded-circle mr-3 my-1"/>
                     <div>
-                        <ListGroupItemHeading className="text-muted small">Welcome.</ListGroupItemHeading>
+                        <ListGroupItemHeading className="text-muted small">{welcome}.</ListGroupItemHeading>
                         <ListGroupItemText>
                             {name}
                         </ListGroupItemText>
