@@ -5,7 +5,6 @@ import {Row, Col, Card, CardTitle, CardText,
 class CardColumnsState extends Component {
 
     render() {
-        const { piece, amount, program } = this.props;
 
         return(
             <Row>

@@ -153,7 +153,7 @@ export const DashText = {
     }
 };
 
-export const ProfileText = {
+export const FormText = {
     th: {
         welcome: 'ยินดีต้อนรับ',
         general: 'ทั่วไป',
@@ -167,22 +167,33 @@ export const ProfileText = {
         activity: 'กิจกรรม',
         setting: 'การตั้งค่า',
         signOut: 'ออกจากระบบ',
-        customerId: 'รหัสผู้เข้าใช้งาน',
-        address: 'ที่อยู่',
-        tel: 'โทร',
-        contact: 'ติดต่อ',
-        date: 'วัน/เดือน/ปี',
-        route: 'เส้นทาง',
-        type: 'ปรเภท',
+
+        ProfileText:{
+            customerId: 'รหัสผู้เข้าใช้งาน',
+            address: 'ที่อยู่',
+            tel: 'โทร',
+            contact: 'ติดต่อ',
+            date: 'วัน/เดือน/ปี',
+            route: 'เส้นทาง',
+            type: 'ปรเภท',
+        },
+
+        RegisterText:{
+            header: 'สมัครสมาชิก \n' + 'เมื่อยังไม่มี',
+            submit: 'เข้าสู่ระบบ',
+        },
+
+        LoginText:{
+            header: 'ลงชื่อเข้าใช้งาน',
+            submit: 'เข้าสู่ระบบ',
+            forgot: 'ลืมผู้ใช้งาน , อีเมลล์ หรือรหัสผ่าน ',
+            forgotClick: 'คลิกที่นี่',
+            menberYet: 'คุณเป็นสมาชิกแล้วหรือยัง ?',
+            signUp: 'สร้างบัญชี',
+            rememberMe: 'จำฉันเอาไว้',
+        },
     },
     en: {
-        customerId: 'Customer ID',
-        address: 'Address',
-        tel: 'Telephone',
-        contact: 'Contact',
-        date: 'Date',
-        route: 'Route',
-        type: 'Type',
         welcome: 'Welcome',
         general: 'General',
         homePage: 'Home',
@@ -195,6 +206,31 @@ export const ProfileText = {
         activity: 'Activity',
         setting: 'Setting',
         signOut: 'Sign out',
+
+        ProfileText:{
+            customerId: 'Customer ID',
+            address: 'Address',
+            tel: 'Telephone',
+            contact: 'Contact',
+            date: 'Date',
+            route: 'Route',
+            type: 'Type',
+        },
+
+        RegisterText:{
+            header: 'REGISTER ACCOUNT \n' + 'WHEN NOT HAVE YET',
+            submit: 'Submit',
+        },
+
+        LoginText:{
+            header: 'LOGIN TO ACCOUNT',
+            submit: 'Submit',
+            forgot: 'forgot user, email or password, ',
+            forgotClick: 'Click here',
+            menberYet: 'Not a member ?',
+            signUp: 'Sign up',
+            rememberMe: 'Remember me',
+        },
     }
 };
 

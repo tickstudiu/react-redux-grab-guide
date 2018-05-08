@@ -1,4 +1,4 @@
-import Profile from '../pages/Dash/Profile';
+import Profile from '../pages/Dash/FormPage/Profile';
 import DashBoard from '../pages/Dash/DashBoard';
 
 import { PrivateRoute, AuthenRoute, PublicRoute } from '../HOC';

@@ -1,15 +1,13 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {Container, Row, Col} from 'reactstrap';
-import {DashText} from '../../../Text';
-import * as tools from '../../../utils/';
-import * as actions from '../../../redux/actions';
-import ListProfileDashBoard from "../../../components/lists/ListProfileDashBoard";
-import NavDashBoard from "../../../components/navbars/NavDashBoard";
-import NavbarDashBoard from "../../../components/navbars/NavbarDashBoard";
-import CardColumnsState from "../../../components/cards/CardColumnsState";
-import TableState from "../../../components/tables/TableState";
-import ToolbarPage from "../../../components/toolbars/ToolbarPage";
+import {FormText} from '../../../../Text/index';
+import * as tools from '../../../../utils/index';
+import * as actions from '../../../../redux/actions/index';
+import ListProfileDashBoard from "../../../../components/lists/ListProfileDashBoard";
+import NavDashBoard from "../../../../components/navbars/NavDashBoard";
+import NavbarDashBoard from "../../../../components/navbars/NavbarDashBoard";
+import ProfileForm from "../../../../components/forms/ProfileForm";
 
 
 class Dash extends Component {
@@ -26,16 +24,15 @@ class Dash extends Component {
 
     handleChangeLanguage = (lang) => {
         this.props.changeLanguage(lang);
-    };
-
+    }
 
     render() {
         const {handleChangeLanguage} = this;
         const lang = tools.getLanguage();
-        const staticText = tools.checkLanguage(lang, DashText);
+        const staticText = tools.checkLanguage(lang, FormText);
 
         return (
-            <Container fluid className="bg-light">
+            <Container fluid>
                 <Row>
                     <Col className="p-0 ">
                         <NavbarDashBoard staticText={staticText} handleChangeLanguage={handleChangeLanguage}
@@ -50,12 +47,11 @@ class Dash extends Component {
                     </Col>
                     <Col md={9} className="px-lg-0">
                         <div className="p-lg-3">
-
-                            <CardColumnsState/>
-
-                            <TableState/>
-
-                            <ToolbarPage/>
+                            <Row>
+                                <Col md={{size: 8, offset: 2}}>
+                                    <ProfileForm staticText={staticText.ProfileText}/>
+                                </Col>
+                            </Row>
                         </div>
                     </Col>
                 </Row>

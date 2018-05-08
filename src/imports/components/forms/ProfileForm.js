@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import {Form, Col, FormGroup, Input, Button, Label} from 'reactstrap';
-import { Icon } from 'antd';
 
 class ProfileForm extends Component {
     constructor(props) {

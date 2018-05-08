@@ -1,13 +1,13 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import { Container, Row, Col} from 'reactstrap';
-import {ProfileText} from '../../../Text';
-import * as tools from '../../../utils/';
-import * as actions from '../../../redux/actions';
-import ListProfileDashBoard from "../../../components/lists/ListProfileDashBoard";
-import NavDashBoard from "../../../components/navbars/NavDashBoard";
-import NavbarDashBoard from "../../../components/navbars/NavbarDashBoard";
-import ProfileForm from "../../../components/forms/ProfileForm";
+import {FormText} from '../../../../Text/index';
+import * as tools from '../../../../utils/index';
+import * as actions from '../../../../redux/actions/index';
+import ListProfileDashBoard from "../../../../components/lists/ListProfileDashBoard";
+import NavDashBoard from "../../../../components/navbars/NavDashBoard";
+import NavbarDashBoard from "../../../../components/navbars/NavbarDashBoard";
+import LoginForm from "../../../../components/forms/LoginForm";
 
 
 class Dash extends Component {
@@ -30,7 +30,7 @@ class Dash extends Component {
     render() {
         const {handleChangeLanguage} = this;
         const lang = tools.getLanguage();
-        const staticText = tools.checkLanguage(lang, ProfileText);
+        const staticText = tools.checkLanguage(lang, FormText);
 
         return (
             <Container fluid>
@@ -46,7 +46,13 @@ class Dash extends Component {
                     </Col>
                     <Col md={9} className="px-lg-0">
                         <div className="p-lg-3">
-                            <ProfileForm staticText={staticText}/>
+                            <Row>
+                                <Col md={{size: 6, offset: 3}}>
+                                    <LoginForm staticText={staticText.LoginText} handleChange={null}
+                                               username={null} password={null} HaveMember RememberMe
+                                               handleSubmit={null}/>
+                                </Col>
+                            </Row>
                         </div>
                     </Col>
                 </Row>

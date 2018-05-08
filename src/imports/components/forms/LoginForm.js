@@ -41,7 +41,6 @@ class LoginForm extends Component {
     render() {
         const { handleChange, handleSubmit, username, password } = this.props;
         const { header, forgot, forgotClick, submit } = this.props.staticText;
-        const { issShowPassword } = this.state;
 
         return (
             <Form>
@@ -53,7 +52,7 @@ class LoginForm extends Component {
                            className="rounded-0 my-3"
                            value={username} onChange={handleChange}/>
 
-                    <Input type={issShowPassword ? "text" : "password"}
+                    <Input type={"password"}
                            size="large"
                            placeholder="password" name="password"
                            className="rounded-0"

@@ -77,6 +77,8 @@ class NavDashBoard extends Component {
                 <Collapse isOpen={forms}>
                     <ListGroup>
                         <ListGroupItem tag="a" href="/dash/form/profile">Profile form</ListGroupItem>
+                        <ListGroupItem tag="a" href="/dash/form/register">Register form</ListGroupItem>
+                        <ListGroupItem tag="a" href="/dash/form/login">Login form</ListGroupItem>
                     </ListGroup>
                 </Collapse>
 
